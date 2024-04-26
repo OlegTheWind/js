@@ -1,4 +1,3 @@
-
 const searchInput = document.getElementById('searchInput');
 const autocomplete = document.getElementById('autocomplete');
 const repositoryList = document.getElementById('repositoryList');
@@ -27,10 +26,10 @@ function handleSearch() {
 
 function addRepositoryToList(repo) {
     const listItem = document.createElement('li');
-    listItem.innerHTML = `Репозиторий: ${repo.full_name}, Пользователь: ${repo.owner.login}, Звезд: ${repo.stargazers_count}`;
+    listItem.innerHTML = `Репозиторий: ${repo.name}, Пользователь: ${repo.owner.login}, Звезд: ${repo.stargazers_count}`;
     const urlItem = document.createElement('a')
-    urlItem.href = repo.owner.html_url
-    urlItem.innerHTML = `${repo.owner.html_url}`
+    urlItem.href = repo.html_url
+    urlItem.textContent = repo.html_url
     urlItem.target = '_blank';
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Удалить';
